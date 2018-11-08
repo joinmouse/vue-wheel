@@ -29,37 +29,12 @@
             margin: 20px;
         }
     </style>
-    <style>
-        .ui-button {
-            height: var(--button-height);
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            background: var(--button-bg);
-            font-size: var(--font-size);
-            padding: 0 1em;
-        }
-        .ui-button:hover {
-            border-color: var(--border-color-hover)
-        }
-        .ui-button:active {
-            background: var(--button-active-bg)
-        }
-        .ui-button:focus {
-            outline: none;
-        }
-    </style>
 </head>
 <body>
 <div id="app">
     <ui-button></ui-button>
 </div>
 
-<script src="./node_modules/vue/dist/vue.min.js"></script>
-<script src="./button.js"></script>
-<script>
-   new Vue({
-       el: '#app'
-   })
-</script>
+<script src="./src/app.js"></script>
 </body>
 </html>
