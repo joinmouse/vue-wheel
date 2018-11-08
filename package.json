@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/joinmouse/vue-wheel/issues"
   },
-  "homepage": "https://github.com/joinmouse/vue-wheel#readme"
+  "homepage": "https://github.com/joinmouse/vue-wheel#readme",
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
 }
