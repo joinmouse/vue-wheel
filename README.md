@@ -1,2 +1,2 @@
 # vue-wheel
-一个基于vue的轮子
+一个基于vue的组件库
