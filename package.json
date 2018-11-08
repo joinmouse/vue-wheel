@@ -1,0 +1,23 @@
+{
+  "name": "vue-wheel",
+  "version": "1.0.0",
+  "description": "z合适一个ui框架\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D基于vue的ui框架\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[这这是一个\u001b[\u001b[C\u001b[C",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joinmouse/vue-wheel.git"
+  },
+  "keywords": [
+    "vue",
+    "wheel"
+  ],
+  "author": "joinmouse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joinmouse/vue-wheel/issues"
+  },
+  "homepage": "https://github.com/joinmouse/vue-wheel#readme"
+}
