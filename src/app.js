@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Button from './button'
+import Vue from 'vue';
+import Button from './button';
 
 Vue.component('ui-button', Button)
 

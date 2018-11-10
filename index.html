@@ -28,13 +28,26 @@
         #app {
             margin: 20px;
         }
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
 <div id="app">
-    <ui-button></ui-button>
+    <ui-button icon="setting">
+        按钮
+    </ui-button>
+    <ui-button icon="setting" icon-position="right">
+        按钮
+    </ui-button>
 </div>
 
 <script src="./src/app.js"></script>
+<script src="//at.alicdn.com/t/font_912310_lfksr2waygb.js"></script>
 </body>
 </html>
