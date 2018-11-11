@@ -17,7 +17,7 @@
             --button-bg: white;
             --button-active-bg: #eee;
             --border-color: #999;
-            --border-color-hover: #666;
+            --border-color-hover: red;
             --border-radius: 4px;
             --font-size: 14px;
             --color: #333;
@@ -45,7 +45,11 @@
     <ui-button icon="setting" :loading="true" icon-position="right">
         按钮
     </ui-button>
-    <ui-icon name="download"></ui-icon>
+    <ui-button-group>
+        <ui-button icon="left" icon-position="left">上一页</ui-button>
+        <ui-button>更多</ui-button>
+        <ui-button icon="right" icon-position="right">下一页</ui-button>
+    </ui-button-group>
 </div>
 
 <script src="./src/app.js"></script>
