@@ -39,16 +39,16 @@
 </head>
 <body>
 <div id="app">
-    <ui-button icon="setting">
+    <ui-button :loading="loading1" @click="loading1 = !loading1">
         按钮
     </ui-button>
-    <ui-button icon="setting" icon-position="right">
+    <ui-button icon="setting" :loading="true" icon-position="right">
         按钮
     </ui-button>
     <ui-icon name="download"></ui-icon>
 </div>
 
 <script src="./src/app.js"></script>
-<script src="//at.alicdn.com/t/font_912310_lfksr2waygb.js"></script>
+<script src="//at.alicdn.com/t/font_912310_8xd130mnjj.js"></script>
 </body>
 </html>
