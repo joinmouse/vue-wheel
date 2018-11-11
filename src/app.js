@@ -18,6 +18,7 @@ new Vue({
 import chai from 'chai'
 import spies from 'chai-spies'
 const expect = chai.expect
+chai.use(spies)
 
 {
     const Constructor = Vue.extend(Button)
@@ -54,7 +55,7 @@ const expect = chai.expect
             iconPosition: 'right'
         }
     })
-    button.$mount()
+    button.$mount(div)
     let svg = button.$el.querySelector('svg')
     let { order } = window.getComputedStyle(svg)
     console.log(order)
@@ -71,9 +72,9 @@ const expect = chai.expect
         }
     })
     vm.$mount()
-    let spy = chai.spy(function () {
-        console.log(1)
-    })
+    let spy = chai.spy(function(){})
+    vm.$on('click', spy)
+    // 希望这个函数被执行
     vm.$el.click()
     expect(spy).to.have.been.called()
 }
