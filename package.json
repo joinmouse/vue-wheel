@@ -27,6 +27,7 @@
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.3.0",
     "chai": "^4.2.0",
+    "chai-spies": "^1.0.0",
     "node-sass": "^4.10.0",
     "parcel-bundler": "^1.10.3",
     "sass-loader": "^7.1.0",
