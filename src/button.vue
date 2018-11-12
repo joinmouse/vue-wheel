@@ -9,7 +9,14 @@
 </template>
 
 <script>
+
+    import Icon from './icon'
+
     export default {
+        components: {
+            'ui-icon': Icon
+        },
+
         props: {
             icon: {},
             loading: {
