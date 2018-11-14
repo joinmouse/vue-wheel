@@ -35,24 +35,39 @@
             fill: currentColor;
             overflow: hidden;
         }
+        .box {
+            margin: 20px;
+        }
     </style>
 </head>
 <body>
 <div id="app">
-    <ui-button :loading="loading1" @click="loading1 = !loading1">
-        按钮
-    </ui-button>
-    <ui-button :loading="true" icon-position="right">
-        按钮
-    </ui-button>
-    <ui-button icon="setting" icon-position="right">
-        按钮
-    </ui-button>
-    <ui-button-group>
-        <ui-button icon="left" icon-position="left">上一页</ui-button>
-        <ui-button>更多</ui-button>
-        <ui-button icon="right" icon-position="right">下一页</ui-button>
-    </ui-button-group>
+    <div class="box">
+        <ui-input value="张三" disabled></ui-input>
+        <ui-input value="李四" readonly></ui-input>
+        <ui-input value="王五"></ui-input>
+    </div>
+    <div class="box">
+        <ui-input value="六" error="姓名不能少于两个字"></ui-input>
+    </div>
+
+    <div class="box">
+        <ui-button :loading="loading1" @click="loading1 = !loading1">
+            按钮
+        </ui-button>
+        <ui-button :loading="true" icon-position="right">
+            按钮
+        </ui-button>
+        <ui-button icon="setting" icon-position="right">
+            按钮
+        </ui-button>
+        <ui-button-group>
+            <ui-button icon="left" icon-position="left">上一页</ui-button>
+            <ui-button>更多</ui-button>
+            <ui-button icon="right" icon-position="right">下一页</ui-button>
+        </ui-button-group>
+    </div>
+
 </div>
 
 <script src="./src/app.js"></script>
