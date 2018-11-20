@@ -12,7 +12,8 @@ Vue.component('ui-input', Input)
 new Vue({
     el: '#app',
     data: {
-        loading1: false
+        loading1: false,
+        message: '王五'
     },
     methods: {
         inputChange(e) {
