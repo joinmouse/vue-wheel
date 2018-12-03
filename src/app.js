@@ -20,7 +20,14 @@ new Vue({
         message: '王五'
     },
     created() {
-        this.$toast('测试一下 toast')
+        this.$toast("toast试一下", {
+            closeButton: {
+                text: '知道了',
+                callback() {
+                    console.log('用户说知道了')
+                }
+            }
+        })
     },
     methods: {
         inputChange(e) {

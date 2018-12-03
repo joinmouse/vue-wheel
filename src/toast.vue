@@ -1,7 +1,7 @@
 <template>
-    <div class="toast">
+    <div class="toast" ref="wrapper">
         <slot></slot>
-        <div class="line"></div>
+        <div class="line" ref="line"></div>
         <span class="close" v-if="closeButton" @click="onClickClose">
             {{closeButton.text}}
         </span>
@@ -25,9 +25,7 @@ export default {
             default() {
                 return {
                     text: '关闭',
-                    callback: (toast) => {
-                        toast.close()
-                    }
+                    callback: undefined
                 }
             }
         }
@@ -36,20 +34,31 @@ export default {
         console.log(this.closeButton)
     },
     mounted() {
-        if(this.autoClose) {
-            setTimeout(() => {
-                this.close()
-            }, this.autoCloseDelay * 1000)
-        }
+        this.updateStyles()
+        this.execAutoClose()
     },
     methods: {
+        updateStyles() {
+            this.$nextTick(() => {
+                this.$refs.line.style.height = `${this.$refs.wrapper.getBoundingClientRect().height}px`
+            })
+        },
+        execAutoClose() {
+            if(this.autoClose) {
+                setTimeout(() => {
+                    this.close()
+                }, this.autoCloseDelay * 1000)
+            }
+        },
         close() {
             this.$el.remove()
             this.$destroy()
         },
         onClickClose() {
             this.close()
-            this.closeButton.callback()
+            if(this.closeButton && typeof this.closeButton.callback === 'undefined') {
+                this.closeButton.callback()
+            }
         }
     }
 }
@@ -57,7 +66,7 @@ export default {
 
 <style scoped lang="scss">
 $font-size: 14px;
-$toast-height: 40px;
+$toast-min-height: 40px;
 $toast-bg: rgba(0,0,0,0.75);
 
 .toast {
@@ -70,7 +79,7 @@ $toast-bg: rgba(0,0,0,0.75);
     transform: translateX(-50%);
     border-radius: 4px;
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
-    height: $toast-height;
+    min-height: $toast-min-height;
     font-size: 14px;
     line-height: 1.8;
     background: $toast-bg;
@@ -78,6 +87,7 @@ $toast-bg: rgba(0,0,0,0.75);
 }
 .close {
     padding-left: 16px;
+    flex-shrink: 0;
 }
 .line {
     height: 100%;
