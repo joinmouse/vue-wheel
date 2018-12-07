@@ -20,9 +20,10 @@ new Vue({
         message: '王五'
     },
     created() {
-        this.$toast("toast试一下", {
+        this.$toast("测试toast试一下", {
+            position: 'bottom',
             closeButton: {
-                text: '知道了',
+                text: '好的',
                 callback() {
                     console.log('用户说知道了')
                 }
