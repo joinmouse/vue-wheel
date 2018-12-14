@@ -1,31 +1,49 @@
 <template>
     <div>
-        <slides>
-            <div class="box">1</div>
-            <div class="box">2</div>
-            <div class="box">3</div>
-        </slides>
+        <ui-button>hello</ui-button>
     </div>
 </template>
 
 <script>
-import Slides from './slides'
+import Button from './button'
 
 export default {
-    'slides': Slides
+    components: {
+        'ui-button': Button
+    }
 }
 </script>
 
 <style>
 * {
+    margin: 0;
     padding: 0;
-    maring: 0;
     box-sizing: border-box;
 }
+html {
+    --button-height: 32px;
+    --button-bg: white;
+    --button-active-bg: #eee;
+    --border-color: #999;
+    --border-color-hover: #666;
+    --border-radius: 4px;
+    --font-size: 14px;
+    --color: #333;
+}
+body {
+    font-size: var(--font-size);
+}
+#app {
+    margin: 20px;
+}
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
 .box {
-    width: 200px;
-    height: 150px;
-    background: #ccc;
-    border: 1px solid red;
+    margin: 20px;
 }
 </style>
