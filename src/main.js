@@ -7,7 +7,6 @@ new Vue({
     render: h => h(Demo)
 }).$mount('#app');
 
-
 // import Vue from 'vue';
 // import Button from './button';
 // import Icon from './icon';

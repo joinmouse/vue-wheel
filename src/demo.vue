@@ -1,18 +1,48 @@
 <template>
     <div>
-        <ui-button>hello</ui-button>
+        <!--
+            <tabs selected="selectedTab" @update:selected="selectedTab = $event">
+        -->
+        <tabs :selected.sync="selectedTab">
+            <tabs-head>
+                <tabs-item name="woman">美女</tabs-item>
+                <tabs-item name="finance">财经</tabs-item>
+                <tabs-item name="sports">体育</tabs-item>
+            </tabs-head>
+            <tabs-body>
+                <tabs-pane name="woman">美女相关咨询</tabs-pane>
+                <tabs-pane name="finance">财经相关咨询</tabs-pane>
+                <tabs-pane name="sports">体育相关咨询</tabs-pane>
+            </tabs-body>
+        </tabs>
     </div>
 </template>
 
 <script>
-import Button from './button'
+import Tabs from './tab/tabs'
+import TabsHead from './tab/tabs-head'
+import TabsItem from './tab/tabs-item'
+import TabsBody from './tab/tabs-body'
+import TabsPane from './tab/tabs-pane'
 
 export default {
+    name: 'Demo',
+    data () {
+        return {
+            selectedTab: 'sports'
+        }
+    },
     components: {
-        'ui-button': Button
+        Tabs, TabsHead, TabsItem, TabsBody, TabsPane
     }
 }
 </script>
+
+
+<style <style lang="scss" scoped>
+
+</style>
+
 
 <style>
 * {
