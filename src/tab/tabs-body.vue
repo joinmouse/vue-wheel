@@ -6,7 +6,12 @@
 
 <script>
 export default {
-    name: 'UITabsBody'
+    name: 'UITabsBody',
+    inject: ['eventBus'],
+    created() {
+        console.log('tab给tab-body的eventBus')
+        console.log(this.eventBus)
+    }
 }
 </script>
 
