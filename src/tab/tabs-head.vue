@@ -15,7 +15,6 @@ export default {
 }
 </script>
 
-
 <style lang="scss" scoped>
 $tab-height: 40px;
 .tabs-header {
@@ -23,6 +22,5 @@ $tab-height: 40px;
     height: $tab-height;
     border: 1px solid red;
     justify-content: flex-start;
-    align-items: center;
 }
 </style>

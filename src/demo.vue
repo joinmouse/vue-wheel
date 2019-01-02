@@ -29,7 +29,7 @@ export default {
     name: 'Demo',
     data () {
         return {
-            selectedTab: 'sports'
+            selectedTab: 'woman'
         }
     },
     components: {
