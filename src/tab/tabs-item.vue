@@ -14,19 +14,8 @@ export default {
         }
     },
     props: {
-        name: String,
+        name: String|Number,
         required: true
-    },
-    created() {
-        this.eventBus.$on('update:selected', (name) => {
-            if(name === this.name) {
-                // console.log(`${this.name}我被选中了`)
-                this.active = true
-            }else {
-                // console.log(`${this.name}我没被选中了`)
-                this.active = false
-            }
-        })
     },
     computed: {
         classes() {
@@ -35,8 +24,18 @@ export default {
             }
         }
     },
+    created() {
+        this.eventBus.$on('update:selected', (name) => {
+            if(name === this.name) {
+                this.active = true
+            }else {
+                this.active = false
+            }
+        })
+    },
     methods: {
         xxx() {
+            console.log(this.name)
             this.eventBus.$emit('update:selected', this.name)
         }
     }
@@ -49,12 +48,12 @@ export default {
     flex-shrink: 0;
     padding: 0 1em;
     cursor: pointer;
-    border: 1px solid green;
     height: 100%;
     display: flex;
     align-items: center;
     &.active {
-        background: red;
+        color: blue;
+        border-bottom: 1px solid blue;
     }
 }
 </style>

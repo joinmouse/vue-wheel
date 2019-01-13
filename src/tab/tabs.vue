@@ -1,7 +1,6 @@
 <template>
     <div class="tabs">
         <slot></slot>
-        <slot name="actions"></slot>  
     </div>
 </template>
 
@@ -33,8 +32,9 @@ export default {
             eventBus: this.eventBus
         }
     },
-    created() {
-        this.$emit('update:selected', this.selected)
+    mounted() {
+        // 通知当前选中的tab
+        this.eventBus.$emit('update:selected', this.selected)
     }
 }
 </script>
@@ -42,6 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 .tabs {
-
+    padding-top: 10px;
+    padding-left: 5px;
 }
 </style>

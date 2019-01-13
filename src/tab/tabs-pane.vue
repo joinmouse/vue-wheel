@@ -8,15 +8,15 @@
 export default {
     name: 'UITabsPane',
     inject: ['eventBus'],
+    data() {
+        return {
+            active: false
+        }
+    },
     props: {
         name: {
             type: String,
             required: true
-        }
-    },
-    data() {
-        return {
-            active: false
         }
     },
     computed: {
@@ -27,12 +27,11 @@ export default {
         }
     },
     created() {
+        // name是this.eventBus.$emit传入的值
         this.eventBus.$on('update:selected', (name) => {
             if(name === this.name) {
-                // console.log(`pane ${this.name}我被选中了`)
                 this.active = true
             }else {
-                // console.log(`pane ${this.name}我没被选中了`)
                 this.active = false
             }
         })
@@ -43,8 +42,9 @@ export default {
 
 <style lang="scss" scoped>
 .tabs-pane {
+    padding: .8em;
     &.active {
-        background: red;
+        font-size: 16px;   
     }
 }
 </style>

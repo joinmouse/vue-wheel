@@ -1,6 +1,9 @@
 <template>
     <div class="tabs-header">
-        <slot></slot>    
+        <slot></slot>
+        <div class="actions-wrapper">
+            <slot name="actions"></slot>
+        </div>
     </div>
 </template>
 
@@ -17,10 +20,15 @@ export default {
 
 <style lang="scss" scoped>
 $tab-height: 40px;
+$border-color: #ddd;
 .tabs-header {
     display: flex;
     height: $tab-height;
-    border: 1px solid red;
     justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+    > .actions-wrapper {
+        margin-left: auto;
+    }
 }
 </style>

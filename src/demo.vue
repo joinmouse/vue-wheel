@@ -1,8 +1,5 @@
 <template>
     <div>
-        <!--
-            <tabs selected="selectedTab" @update:selected="selectedTab = $event">
-        -->
         <tabs :selected.sync="selectedTab">
             <tabs-head>
                 <tabs-item name="woman">美女</tabs-item>
