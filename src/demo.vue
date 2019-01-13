@@ -12,6 +12,13 @@
                 <tabs-pane name="sports">体育相关咨询</tabs-pane>
             </tabs-body>
         </tabs>
+
+        <popover>
+            <template slot="content">
+                <div>popover内容</div>
+            </template>
+            <button>点我</button>
+        </popover>
     </div>
 </template>
 
@@ -21,6 +28,7 @@ import TabsHead from './tab/tabs-head'
 import TabsItem from './tab/tabs-item'
 import TabsBody from './tab/tabs-body'
 import TabsPane from './tab/tabs-pane'
+import Popover from './popover/index'
 
 export default {
     name: 'Demo',
@@ -30,7 +38,7 @@ export default {
         }
     },
     components: {
-        Tabs, TabsHead, TabsItem, TabsBody, TabsPane
+        Tabs, TabsHead, TabsItem, TabsBody, TabsPane, Popover
     }
 }
 </script>
