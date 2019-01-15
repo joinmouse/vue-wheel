@@ -37,6 +37,33 @@
             </template>
             <button>点我</button>
         </popover>
+        
+        <div>
+            <popover trigger="hover">
+                <template slot="content">
+                    <div>popover内容</div>
+                </template>
+                <button>点我</button>
+            </popover>
+            <popover position="left" trigger="hover">
+                <template slot="content">
+                    <div>popover内容</div>
+                </template>
+                <button>点我</button>
+            </popover>
+            <popover position="right" trigger="hover">
+                <template slot="content">
+                    <div>popover内容</div>
+                </template>
+                <button>点我</button>
+            </popover>
+            <popover position="bottom" trigger="hover">
+                <template slot="content">
+                    <div>popover内容</div>
+                </template>
+                <button>点我</button>
+            </popover>
+        </div>
     </div>
 </template>
 

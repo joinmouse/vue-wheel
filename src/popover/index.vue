@@ -1,5 +1,5 @@
 <template>
-    <div class="popover" @click="onClick">
+    <div class="popover" ref="popover">
         <div ref="contentWrapper" class="content-wrapper" :class="{[`position-${position}`]:true}" v-if="visible">
             <slot name="content"></slot>
         </div>
@@ -24,55 +24,109 @@ export default {
             validator(value) {
                 return ['top', 'bottom', 'left', 'right'].indexOf(value) > -1
             }
+        },
+        trigger: {
+            type: String,
+            default: 'click',
+            validator(value) {
+                return ['click', 'hover'].indexOf(value) > -1
+            }
         }
     },
-    methods: {
-        onClick(event) {
-            console.log(event.target)
-            if(this.$refs.triggerWrapper.contains(event.target)) {
-                console.log('vm 隐藏 popover')
-                this.visible = !this.visible
-                if(this.visible === true) {
-                    this.onShow()
-                }
+    computed: {
+        openEvent() {
+            if(this.trigger === 'click') {
+                return 'click'
+            }else {
+                return 'mouseenter'
             }
         },
-        positionContent() {
+        closeEvent() {
+            if(this.trigger === 'click') {
+                return 'click'
+            }else {
+                return 'mouseleave'
+            }
+        }
+    },
+    mounted() {
+        this.addPopoverListeners()
+    },
+    methods: {
+        addPopoverListeners(){
+            if (this.trigger === 'click') {
+                this.$refs.popover.addEventListener('click', this.onClick)
+            } else {
+                this.$refs.popover.addEventListener('mouseenter', this.open)
+                this.$refs.popover.addEventListener('mouseleave', this.close)
+            }
+        },
+        removePopoverListeners(){
+            if (this.trigger === 'click') {
+                this.$refs.popover.removeEventListener('click', this.onClick)
+            } else {
+                this.$refs.popover.removeEventListener('mouseenter', this.open)
+                this.$refs.popover.removeEventListener('mouseleave', this.close)
+            }
+        },
+        putBackContent(){
+            const {contentWrapper, popover} = this.$refs
+            if(!contentWrapper){return}
+            popover.appendChild(contentWrapper)
+        },
+        positionContent () {
             const {contentWrapper, triggerWrapper} = this.$refs
             document.body.appendChild(contentWrapper)
-            let {width, height, top, left} = triggerWrapper.getBoundingClientRect()
-            if (this.position === 'top') {
-            contentWrapper.style.left = left + window.scrollX + 'px'
-            contentWrapper.style.top = top + window.scrollY + 'px'
-            } else if (this.position === 'bottom') {
-            contentWrapper.style.left = left + window.scrollX + 'px'
-            contentWrapper.style.top = top + height + window.scrollY + 'px'
-            } else if (this.position === 'left') {
-            contentWrapper.style.left = left + window.scrollX + 'px'
-            let {height: height2} = contentWrapper.getBoundingClientRect()
-            contentWrapper.style.top = top + window.scrollY + (height - height2) / 2 + 'px'
-            } else if (this.position === 'right') {
-            contentWrapper.style.left = left + window.scrollX + width + 'px'
-            let {height: height2} = contentWrapper.getBoundingClientRect()
-            contentWrapper.style.top = top + window.scrollY + (height - height2) / 2 + 'px'
+            const {width, height, top, left} = triggerWrapper.getBoundingClientRect()
+            const {height: height2} = contentWrapper.getBoundingClientRect()
+            let positions = {
+            top: {top: top + window.scrollY, left: left + window.scrollX,},
+            bottom: {top: top + height + window.scrollY, left: left + window.scrollX},
+            left: {
+                top: top + window.scrollY + (height - height2) / 2,
+                left: left + window.scrollX
+            },
+            right: {
+                top: top + window.scrollY + (height - height2) / 2,
+                left: left + window.scrollX + width
+            },
             }
+            contentWrapper.style.left = positions[this.position].left + 'px'
+            contentWrapper.style.top = positions[this.position].top + 'px'
         },
-        listenToDocument() {
-            let eventHandle = (e) => {
-                if(!this.$refs.contentWrapper.contains(e.target)) {
-                    this.visible = false
-                    console.log('document 隐藏 popover')
-                    document.removeEventListener('click', eventHandle)
-                }
-            }
-            document.addEventListener('click', eventHandle)
+        onClickDocument (e) {
+            if (this.$refs.popover &&
+            (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))
+            ) { return }
+            if (this.$refs.contentWrapper &&
+            (this.$refs.contentWrapper === e.target || this.$refs.contentWrapper.contains(e.target))
+            ) { return }
+            this.close()
         },
-        onShow() {
+        open () {
+            this.visible = true
             this.$nextTick(() => {
                 this.positionContent()
-                this.listenToDocument()
+                document.addEventListener('click', this.onClickDocument)
             })
+        },
+        close () {
+            this.visible = false
+            document.removeEventListener('click', this.onClickDocument)
+        },
+        onClick (event) {
+            if (this.$refs.triggerWrapper.contains(event.target)) {
+                if (this.visible === true) {
+                    this.close()
+                } else {
+                    this.open()
+                }
+            }
         }
+    },
+    beforeDestroy() {
+        this.putBackContent()
+        this.removePopoverListeners()
     }
 }
 </script>
@@ -107,6 +161,7 @@ $border-radius: 4px;
       transform: translateY(-100%);
       margin-top: -10px;
       &::before, &::after {
+        border-bottom: none;
         left: 10px;
       }
       &::before {
@@ -121,6 +176,7 @@ $border-radius: 4px;
     &.position-bottom {
       margin-top: 10px;
       &::before, &::after {
+        border-top: none;
         left: 10px;
       }
       &::before {
@@ -136,6 +192,7 @@ $border-radius: 4px;
       transform: translateX(-100%);
       margin-left: -10px;
       &::before, &::after {
+        border-right: none;
         transform: translateY(-50%);
         top: 50%;
       }
@@ -151,6 +208,7 @@ $border-radius: 4px;
     &.position-right {
       margin-left: 10px;
       &::before, &::after {
+        border-left: none;
         transform: translateY(-50%);
         top: 50%;
       }
