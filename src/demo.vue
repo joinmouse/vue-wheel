@@ -13,7 +13,25 @@
             </tabs-body>
         </tabs>
 
-        <popover>
+        <popover class="poppver">
+            <template slot="content">
+                <div>popover内容</div>
+            </template>
+            <button>点我</button>
+        </popover>
+        <popover position="left">
+            <template slot="content">
+                <div>popover内容</div>
+            </template>
+            <button>点我</button>
+        </popover>
+        <popover position="right">
+            <template slot="content">
+                <div>popover内容</div>
+            </template>
+            <button>点我</button>
+        </popover>
+        <popover position="bottom">
             <template slot="content">
                 <div>popover内容</div>
             </template>
@@ -45,7 +63,10 @@ export default {
 
 
 <style <style lang="scss" scoped>
-
+.popover {
+    margin-top: 100px;
+    margin-left: 50px;
+}
 </style>
 
 
