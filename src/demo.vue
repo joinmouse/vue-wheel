@@ -13,7 +13,7 @@
             </tabs-body>
         </tabs>
 
-        <popover class="poppver">
+        <!-- <popover class="poppver">
             <template slot="content">
                 <div>popover内容</div>
             </template>
@@ -36,34 +36,13 @@
                 <div>popover内容</div>
             </template>
             <button>点我</button>
-        </popover>
+        </popover> -->
         
-        <div>
-            <popover trigger="hover">
-                <template slot="content">
-                    <div>popover内容</div>
-                </template>
-                <button>点我</button>
-            </popover>
-            <popover position="left" trigger="hover">
-                <template slot="content">
-                    <div>popover内容</div>
-                </template>
-                <button>点我</button>
-            </popover>
-            <popover position="right" trigger="hover">
-                <template slot="content">
-                    <div>popover内容</div>
-                </template>
-                <button>点我</button>
-            </popover>
-            <popover position="bottom" trigger="hover">
-                <template slot="content">
-                    <div>popover内容</div>
-                </template>
-                <button>点我</button>
-            </popover>
-        </div>
+        <collapse class="collapse">
+            <collapse-item title="标题1">内容1</collapse-item>
+            <collapse-item title="标题2">内容2</collapse-item>
+            <collapse-item title="标题3">内容3</collapse-item>
+        </collapse>
     </div>
 </template>
 
@@ -74,6 +53,8 @@ import TabsItem from './tab/tabs-item'
 import TabsBody from './tab/tabs-body'
 import TabsPane from './tab/tabs-pane'
 import Popover from './popover/index'
+import Collapse from './collapse/'
+import CollapseItem from './collapse/item'
 
 export default {
     name: 'Demo',
@@ -83,7 +64,7 @@ export default {
         }
     },
     components: {
-        Tabs, TabsHead, TabsItem, TabsBody, TabsPane, Popover
+        Tabs, TabsHead, TabsItem, TabsBody, TabsPane, Popover, Collapse, CollapseItem
     }
 }
 </script>
@@ -93,6 +74,9 @@ export default {
 .popover {
     margin-top: 100px;
     margin-left: 50px;
+}
+.collapse {
+    margin: 50px;
 }
 </style>
 

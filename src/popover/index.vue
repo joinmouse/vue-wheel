@@ -95,12 +95,9 @@ export default {
             contentWrapper.style.top = positions[this.position].top + 'px'
         },
         onClickDocument (e) {
-            if (this.$refs.popover &&
-            (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))
-            ) { return }
-            if (this.$refs.contentWrapper &&
-            (this.$refs.contentWrapper === e.target || this.$refs.contentWrapper.contains(e.target))
-            ) { return }
+            const {popover, contentWrapper} = this.$refs
+            if (popover && (popover === e.target || popover.contains(e.target))) { return }
+            if (contentWrapper && (contentWrapper === e.target || contentWrapper.contains(e.target))) { return }
             this.close()
         },
         open () {
@@ -124,6 +121,7 @@ export default {
             }
         }
     },
+    
     beforeDestroy() {
         this.putBackContent()
         this.removePopoverListeners()
