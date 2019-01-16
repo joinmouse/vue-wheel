@@ -39,9 +39,9 @@
         </popover> -->
         
         <collapse class="collapse">
-            <collapse-item title="标题1">内容1</collapse-item>
-            <collapse-item title="标题2">内容2</collapse-item>
-            <collapse-item title="标题3">内容3</collapse-item>
+            <collapse-item title="> 标题1">内容1</collapse-item>
+            <collapse-item title="> 标题2">内容2</collapse-item>
+            <collapse-item title="> 标题3">内容3</collapse-item>
         </collapse>
     </div>
 </template>
