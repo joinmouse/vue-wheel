@@ -47,14 +47,14 @@ export default {
 .cascader {
     margin-left: 200px;
     .trigger {
-        border: 1px solid red;
+        border: 1px solid black;
         height: 32px;
         width: 100px;
     }
     .popover {
-        border: 1px solid red;
-        height: 200px;
         display: flex;
+        height: 200px;
+        background: #fff;
     }
 }
 </style>
