@@ -1,5 +1,14 @@
 module.exports = {
-    base: '/vue-wheel/',
-    title: 'Hello VueWheel',
-    description: 'Just playing around'
+    title: 'VueWheel UI',
+    description: 'Just playing around',
+    themeConfig: {
+        sidebar: [
+            '/install/',
+            '/guide/',
+            {
+                title: '通用',
+                children: ['/components/button']
+            }
+        ]
+    }
 }
