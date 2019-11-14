@@ -8,7 +8,11 @@ module.exports = {
             '/guide/',
             {
                 title: '通用',
-                children: ['/common/button']
+                collapsable: false,
+                children: [
+                    '/common/button',
+                    '/common/icon'
+                ]
             }
         ]
     }
