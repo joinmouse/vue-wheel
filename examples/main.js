@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { WhButton } from '../packages/index'
+import { WhButton, WhRow, WhCol } from '../packages/index'
 
 Vue.use(WhButton)
+Vue.use(WhRow)
+Vue.use(WhCol)
 
 Vue.config.productionTip = false
 

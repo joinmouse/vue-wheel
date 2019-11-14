@@ -30,7 +30,7 @@
 		"chai": "^4.1.2",
 		"eslint": "^5.16.0",
 		"eslint-plugin-vue": "^5.0.0",
-		"node-sass": "^4.12.0",
+		"node-sass": "^4.13.0",
 		"sass-loader": "^8.0.0",
 		"typescript": "~3.5.3",
 		"vue-template-compiler": "^2.6.10",
@@ -51,19 +51,19 @@
 			"parser": "@typescript-eslint/parser"
 		},
 		"overrides": [
-		{
-			"files": [
-			"**/__tests__/*.{j,t}s?(x)"
-			],
-			"env": {
-			"mocha": true
+			{
+				"files": [
+					"**/__tests__/*.{j,t}s?(x)"
+				],
+				"env": {
+					"mocha": true
+				}
 			}
-		}
 		]
 	},
 	"postcss": {
 		"plugins": {
-		"autoprefixer": {}
+			"autoprefixer": {}
 		}
 	},
 	"browserslist": [

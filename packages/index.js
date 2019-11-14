@@ -1,8 +1,11 @@
 import WhButton from './button/index'
+import {WhRow, WhCol} from './Grid/index'
 
 // 以数组的结构保存组件，便于遍历
 const components = [
-    WhButton
+    WhButton,
+    WhRow,
+    WhCol
 ]
 
 // 定义 install 方法
@@ -20,5 +23,7 @@ export {
     // 导出的对象必须具备一个 install 方法
     install,
     // 组件列表
-    WhButton
+    WhButton,
+    WhRow,
+    WhCol
 }
