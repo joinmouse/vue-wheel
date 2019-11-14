@@ -16,10 +16,8 @@ export default {
 }
 </script>
 
-
 <style lang="scss" scoped>
 .wh-button {
-    margin: 0 5px;
     line-height: 1.5;
     position: relative;
     display: inline-block;
@@ -52,6 +50,7 @@ export default {
 }
 
 .wh-button-primary {
+    border: 1px solid #64C8C8;
     background: #64C8C8;
     color: #fff;
 }
