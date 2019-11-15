@@ -1,15 +1,24 @@
 <template>
     <div>
-        <WhButton>提交</WhButton>
-        <WhButton type="primary">提交</WhButton>
-        <WhRow>
-            <WhCol span="2">1</WhCol>
-            <WhCol span="18" offset="4">2</WhCol>
+        <WhRow class="row">
+            <WhCol span="12">content1</WhCol>
+            <WhCol span="12">conrtent2</WhCol>
         </WhRow>
-        <WhRow>
-            <WhCol>1</WhCol>
-            <WhCol>2</WhCol>
-            <WhCol>3</WhCol>
+        <WhRow class="row">
+            <WhCol span="8">content1</WhCol>
+            <WhCol span="8">conrtent2</WhCol>
+            <WhCol span="8">conrtent3</WhCol>
+        </WhRow>
+        <WhRow class="row">
+            <WhCol span="6">content1</WhCol>
+            <WhCol span="6">conrtent2</WhCol>
+            <WhCol span="6">content3</WhCol>
+            <WhCol span="6">conrtent4</WhCol>
+        </WhRow>
+        <WhRow class="row" gutter="20">
+            <WhCol>content1</WhCol>
+            <WhCol>content2</WhCol>
+            <WhCol>content3</WhCol>
         </WhRow>
     </div>
 </template>
@@ -21,4 +30,7 @@ export default {
 </script>
 
 <style>
+.row {
+    margin-top: 20px;
+}
 </style>

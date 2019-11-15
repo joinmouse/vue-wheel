@@ -1,7 +1,8 @@
 <template>
-    <div class="col" 
-        :class="[span ? `col-${span}` : '', offset ? `offset-${offset}` : '']">
-        <slot></slot>
+    <div class="col-wrapper" :class="[span ? `col-${span}` : '', offset ? `offset-${offset}` : '']">
+        <div class="col"  :style="gutter ? colStyle : ''">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -15,16 +16,30 @@ export default {
         offset: {
             type: [Number , String]
         }
+    },
+    data() {
+        return {
+            gutter: 0
+        }
+    },
+    computed: {
+        colStyle() {
+            return {
+                marginLeft: this.gutter / 2 + 'px',
+                marginRight: this.gutter / 2 + 'px',
+            }
+        }
     }
 }
 </script>
 
 <style scoped lang="scss">
-.col {
-    height: 100px;
+.col-wrapper {
     width: 50%;
-    background: gray;
-    border: 1px solid red;
+    .col {
+        background: #64C8C8;
+        height: 50px;
+    }
 
     $class-span: col-;
     $class-offset: offset-;

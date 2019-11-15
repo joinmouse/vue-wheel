@@ -13,6 +13,13 @@ module.exports = {
                     '/common/button',
                     '/common/icon'
                 ]
+            },
+            {
+                title: '布局',
+                collapsable: false,
+                children: [
+                    '/layout/grid'
+                ]
             }
         ]
     }
