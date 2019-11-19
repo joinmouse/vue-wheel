@@ -1,8 +1,8 @@
 <template>
     <div>
         <WhRow class="row">
-            <WhCol span="12">content1</WhCol>
-            <WhCol span="12">conrtent2</WhCol>
+            <WhCol class="item" span="12">content1</WhCol>
+            <WhCol class="item" span="12">conrtent2</WhCol>
         </WhRow>
         <WhRow class="row">
             <WhCol span="8">content1</WhCol>
@@ -29,8 +29,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .row {
     margin-top: 20px;
+    .item {
+        border-left: 1px solid red;
+    }
 }
 </style>

@@ -1,6 +1,6 @@
 {
-	"name": "vue-wheel",
-	"version": "0.1.0",
+	"name": "vue-wheel-ui",
+	"version": "0.1.1",
 	"private": false,
 	"scripts": {
 		"serve": "vue-cli-service serve",

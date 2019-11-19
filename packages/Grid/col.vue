@@ -39,6 +39,9 @@ export default {
     .col {
         background: #64C8C8;
         height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center
     }
 
     $class-span: col-;

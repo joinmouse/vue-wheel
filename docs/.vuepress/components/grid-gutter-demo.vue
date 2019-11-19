@@ -1,15 +1,15 @@
 <template>
     <div>
-        <WhRow class="row">
+        <WhRow class="row" gutter="20">
             <WhCol span="12">content1</WhCol>
             <WhCol span="12">conrtent2</WhCol>
         </WhRow>
-        <WhRow class="row">
+        <WhRow class="row" gutter="20">
             <WhCol span="8">content1</WhCol>
             <WhCol span="8">conrtent2</WhCol>
             <WhCol span="8">conrtent3</WhCol>
         </WhRow>
-        <WhRow class="row">
+        <WhRow class="row" gutter="20">
             <WhCol span="6">content1</WhCol>
             <WhCol span="6">conrtent2</WhCol>
             <WhCol span="6">content3</WhCol>
