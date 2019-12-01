@@ -1,18 +1,18 @@
 <template>
-    <div class="footer">
+    <div class="sider">
         <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'WhFooter'
+    name: 'WhSider'
 }
 </script>
 
 <style lang="scss" scoped>
-.footer {
-    height: 100px;
-    background: #ccc;
+.sider {
+    background: #eee;
+    width: 200px;
 }
 </style>

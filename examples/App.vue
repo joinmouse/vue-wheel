@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!--
         <WhRow class="row">
             <WhCol class="item" span="12">content1</WhCol>
             <WhCol class="item" span="12">conrtent2</WhCol>
@@ -20,6 +21,15 @@
             <WhCol>content2</WhCol>
             <WhCol>content3</WhCol>
         </WhRow>
+        -->
+        <WhLayout>
+            <WhHeader>header</WhHeader>
+            <WhLayout>
+                <WhSider>sider</WhSider>
+                <WhContent>content</WhContent>
+            </WhLayout>
+            <WhFooter>footer</WhFooter>
+        </WhLayout>
     </div>
 </template>
 
@@ -30,6 +40,12 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 .row {
     margin-top: 20px;
     .item {

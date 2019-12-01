@@ -1,11 +1,17 @@
 import WhButton from './button/index'
 import {WhRow, WhCol} from './Grid/index'
+import {WhLayout, WhContent, WhHeader, WhFooter, WhSider} from './layout/index' 
 
 // 以数组的结构保存组件，便于遍历
 const components = [
     WhButton,
     WhRow,
-    WhCol
+    WhCol,
+    WhLayout,
+    WhContent,
+    WhHeader,
+    WhFooter,
+    WhSider
 ]
 
 // 定义 install 方法
@@ -25,5 +31,10 @@ export {
     // 组件列表
     WhButton,
     WhRow,
-    WhCol
+    WhCol,
+    WhLayout,
+    WhContent,
+    WhHeader,
+    WhFooter,
+    WhSider
 }
