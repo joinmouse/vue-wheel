@@ -11,5 +11,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.content  {
+    flex-grow: 1;
+    background: #64C8C8;
+}
 </style>

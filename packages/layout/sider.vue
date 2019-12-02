@@ -1,18 +1,18 @@
 <template>
-    <div class="header">
+    <div class="sider">
         <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'WhHeader'
+    name: 'WhSider'
 }
 </script>
 
 <style lang="scss" scoped>
-.header {
-    height: 100px;
-    background: #64C8E8;
+.sider {
+    width: 100px;
+    background: #64C8A8;
 }
 </style>

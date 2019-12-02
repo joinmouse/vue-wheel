@@ -2,6 +2,7 @@ import WhLayout from './layout.vue';
 import WhContent from './content.vue';
 import WhHeader from './header.vue';
 import WhFooter from './footer.vue';
+import WhSider from './sider.vue'
 
 // 为组件添加 install 方法，用于按需引入
 WhLayout.install = function(Vue) {
@@ -16,10 +17,14 @@ WhHeader.install = function(Vue) {
 WhFooter.install = function(Vue) {
     Vue.component(WhFooter.name, WhFooter)
 }
+WhSider.install = function(Vue) {
+    Vue.component(WhSider.name, WhSider)
+}
 
 export {
     WhLayout,
     WhContent,
     WhHeader,
-    WhFooter
+    WhFooter,
+    WhSider
 }

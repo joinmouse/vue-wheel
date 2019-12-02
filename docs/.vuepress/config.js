@@ -18,7 +18,8 @@ module.exports = {
                 title: '布局',
                 collapsable: false,
                 children: [
-                    '/layout/grid'
+                    '/layout/grid',
+                    '/layout/layout'
                 ]
             }
         ]
