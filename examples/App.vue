@@ -1,35 +1,10 @@
 <template>
-    <div>
-        <!--
-        <WhRow class="row">
-            <WhCol class="item" span="12">content1</WhCol>
-            <WhCol class="item" span="12">conrtent2</WhCol>
-        </WhRow>
-        <WhRow class="row">
-            <WhCol span="8">content1</WhCol>
-            <WhCol span="8">conrtent2</WhCol>
-            <WhCol span="8">conrtent3</WhCol>
-        </WhRow>
-        <WhRow class="row">
-            <WhCol span="6">content1</WhCol>
-            <WhCol span="6">conrtent2</WhCol>
-            <WhCol span="6">content3</WhCol>
-            <WhCol span="6">conrtent4</WhCol>
-        </WhRow>
-        <WhRow class="row" gutter="20">
-            <WhCol>content1</WhCol>
-            <WhCol>content2</WhCol>
-            <WhCol>content3</WhCol>
-        </WhRow>
-        -->
-        <WhLayout>
-            <WhHeader>header</WhHeader>
-            <WhLayout>
-                <WhSider>sider</WhSider>
-                <WhContent>content</WhContent>
-            </WhLayout>
-            <WhFooter>footer</WhFooter>
-        </WhLayout>
+    <div class="wrapper">
+        <div class="nav">
+            <router-link to="/button">WhButton组件</router-link>
+            <router-link to="/grid">WhGrid组件</router-link>
+        </div>
+        <router-view></router-view>
     </div>
 </template>
 
@@ -40,11 +15,41 @@ export default {
 </script>
 
 <style lang="scss">
-* {
+*,
+*::before,
+*::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
+.wrapper {
+    margin: 50px 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100%;
+        z-index: -1000;
+        border-right: 1px solid #ddd;
+    }
+    .nav {
+        width: 240px;
+        a {
+            padding: 10px;
+            display: block;
+        }
+    }
+}
+
 
 .row {
     margin-top: 20px;

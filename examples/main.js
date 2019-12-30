@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import router from './router.js' 
 import App from './App.vue'
 import { WhButton, WhRow, WhCol, WhContent, WhFooter, WhLayout, WhHeader, WhSider} from '../packages/index'
 
@@ -15,5 +16,6 @@ Vue.use(WhSider)
 Vue.config.productionTip = false
 
 new Vue({
-   render: h => h(App)
+    router,
+    render: h => h(App)
 }).$mount('#app')

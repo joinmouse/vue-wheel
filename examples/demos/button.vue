@@ -4,3 +4,9 @@
         <WhButton type="primary">主要按钮</WhButton>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'button'
+}
+</script>
