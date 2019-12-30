@@ -6,7 +6,20 @@
 
 <script>
 export default {
-    name: 'WhTabPane'
+    name: 'WhTabPane',
+    inject: ['eventBus'],
+
+    props: {
+        name: {
+            type: String,
+            required: true
+        }
+    },
+    created() {
+        this.eventBus.$on('update:selected', (name) => {
+            console.log(name)
+        })
+    }
 }
 </script>
 

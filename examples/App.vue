@@ -3,6 +3,7 @@
         <div class="nav">
             <router-link to="/button">WhButton组件</router-link>
             <router-link to="/grid">WhGrid组件</router-link>
+            <router-link to="/tab">WhTab组件</router-link>
         </div>
         <router-view></router-view>
     </div>

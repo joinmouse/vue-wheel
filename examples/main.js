@@ -1,17 +1,10 @@
 import Vue from 'vue'
 import router from './router.js' 
 import App from './App.vue'
-import { WhButton, WhRow, WhCol, WhContent, WhFooter, WhLayout, WhHeader, WhSider} from '../packages/index'
+// 引入UI包
+import WheelVueUI from '../packages/index'
 
-Vue.use(WhButton)
-Vue.use(WhRow)
-Vue.use(WhCol)
-
-Vue.use(WhLayout)
-Vue.use(WhContent)
-Vue.use(WhHeader)
-Vue.use(WhFooter)
-Vue.use(WhSider)
+Vue.use(WheelVueUI)
 
 Vue.config.productionTip = false
 
