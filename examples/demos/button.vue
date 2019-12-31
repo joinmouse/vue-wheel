@@ -7,6 +7,6 @@
 
 <script>
 export default {
-    name: 'button'
+    name: 'whbutton'
 }
 </script>

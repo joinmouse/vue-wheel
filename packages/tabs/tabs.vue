@@ -1,5 +1,5 @@
 <template>
-    <div class="wh-tabs">
+    <div class="wh-tabs" :class="{'wh-vertical' : direction === 'vertical'}">
         <slot></slot>
     </div>
 </template>
@@ -63,3 +63,20 @@ export default {
     },
 }
 </script>
+
+<style lang="scss">
+.wh-vertical {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    .wh-tab-header {
+        height: 120px;
+        flex-shrink: 1;
+        flex-direction: column;
+    }
+    .wh-tab-body {
+        flex: 1;
+    }
+}
+</style>

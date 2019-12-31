@@ -10,5 +10,6 @@ module.exports = {
             filename: 'index.html'
         }
     },
+    runtimeCompiler: true,
     productionSourceMap: false
 }

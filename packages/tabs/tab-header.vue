@@ -18,6 +18,15 @@ export default {
 
     methods: {
         updateLinePosition (selectedVm) {
+            const vertical = document.querySelector('.wh-vertical')
+            // 垂直向的Tabs
+            // if(vertical) {
+            //     let {height, top} = selectedVm.$el.getBoundingClientRect()
+            //     let topinit = this.$refs.header.getBoundingClientRect().top
+            //     this.$refs.line.style.height = `${height}px`
+            //     this.$refs.line.style.top = `${top - topinit}px`
+            // }
+            // else {
             let {width, left} = selectedVm.$el.getBoundingClientRect()
             let leftinit = this.$refs.header.getBoundingClientRect().left
             this.$refs.line.style.width = `${width}px`
@@ -42,6 +51,19 @@ export default {
             bottom: 0;
             border-bottom: 1px solid $item;
             transition: all 350ms;
+        }
+    }
+    .wh-vertical {
+        .wh-tab-header {
+            height: 100%;
+            border-bottom: none;
+            border-right: 1px solid $border-color;
+        }
+        .line {
+            border-bottom: none;
+            right: 0;
+            width: 10px;
+            border-right: 1px solid $item;
         }
     }
 </style>

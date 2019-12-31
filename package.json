@@ -5,7 +5,8 @@
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
-		"test:unit": "vue-cli-service test:unit",
+        "test": "vue-cli-service test:unit",
+        "test:cov": "vue-cli-service test:unit --coverage",
 		"lint": "vue-cli-service lint",
 		"lib": "vue-cli-service build --target lib --name vue-wheel --dest lib src/index.js",
 		"docs:dev": "vuepress dev docs",
@@ -19,18 +20,16 @@
 		"vue-router": "^3.1.3"
 	},
 	"devDependencies": {
-		"@types/chai": "^4.1.0",
-		"@types/mocha": "^5.2.4",
 		"@vue/cli-plugin-babel": "^4.0.0",
 		"@vue/cli-plugin-eslint": "^4.0.0",
 		"@vue/cli-plugin-typescript": "^4.0.0",
-		"@vue/cli-plugin-unit-mocha": "^4.0.0",
+		"@vue/cli-plugin-unit-jest": "^4.1.2",
 		"@vue/cli-service": "^4.0.0",
 		"@vue/eslint-config-typescript": "^4.0.0",
 		"@vue/test-utils": "1.0.0-beta.29",
-		"chai": "^4.1.2",
 		"eslint": "^5.16.0",
 		"eslint-plugin-vue": "^5.0.0",
+		"jest": "^24.9.0",
 		"node-sass": "^4.13.0",
 		"sass-loader": "^8.0.0",
 		"typescript": "~3.5.3",
@@ -48,8 +47,8 @@
 			"@vue/typescript"
 		],
 		"rules": {
-            "no-console": "off"
-        },
+			"no-console": "off"
+		},
 		"parserOptions": {
 			"parser": "@typescript-eslint/parser"
 		},

@@ -1,11 +1,11 @@
 <template>
     <WhLayout style="height: 40vh">
-        <WhHeader style="height: 8vh">header</WhHeader>
+        <WhHeader class="item" style="height: 8vh">header</WhHeader>
         <WhLayout style="height: 24vh">
-            <WhSider>sider</WhSider>
-            <WhContent>content</WhContent>
+            <WhSider class="item">sider</WhSider>
+            <WhContent class="item">content</WhContent>
         </WhLayout>
-        <WhFooter style="height: 8vh">footer</WhFooter>
+        <WhFooter class="item" style="height: 8vh">footer</WhFooter>
     </WhLayout>
 </template>
 
@@ -27,5 +27,10 @@ export default {
 * {
     color: #fff;
     font-size: 20px;
+}
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

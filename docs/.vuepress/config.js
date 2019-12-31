@@ -21,6 +21,13 @@ module.exports = {
                     '/layout/grid',
                     '/layout/layout'
                 ]
+            }, 
+            {
+                title: '数据展示',
+                collapsable: false,
+                children: [
+                    '/dataShow/tabs'
+                ]
             }
         ]
     }

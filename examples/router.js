@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/button',
-        name: 'button',
+        name: 'whbutton',
         component: ButtonPage
     },{
         path: '/grid',

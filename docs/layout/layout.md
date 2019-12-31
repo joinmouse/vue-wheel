@@ -13,7 +13,8 @@ title: Layout 布局
 - Footer: 底部布局，自带默认样式，只能放在Layout中。
 
 ### 代码演示
-<br>
+1、上中下三栏布局<br>
+
 <layout-demo></layout-demo>
 
 ```js
@@ -23,6 +24,7 @@ title: Layout 布局
     <WhFooter>footer</WhFooter>
 </WhLayout>
 ```
+2、经典布局<br>
 
 <layout-sider-demo></layout-sider-demo>
 
