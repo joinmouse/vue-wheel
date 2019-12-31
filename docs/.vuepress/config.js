@@ -1,21 +1,34 @@
 module.exports = {
-    title: 'Vue-UI',
-    description: '一个基于Vue2.0的UI框架',
+    base: '/vue-wheel/',
+    title: 'VueWheel UI',
+    description: 'Just playing around',
     themeConfig: {
-        nav: [
-            { text: 'Home', link: '/' },
-            { text: 'Guide', link: '/guide/' },
-            { text: 'External', link: 'https://google.com' },
-        ],
         sidebar: [
+            '/install/',
+            '/guide/',
             {
-                title: '入门',
-                children: ['/install/', '/quick-start/']
+                title: '通用',
+                collapsable: false,
+                children: [
+                    '/common/button',
+                    '/common/icon'
+                ]
             },
             {
-                title: '组件',
-                children: ['/components/buttom']
-            },
+                title: '布局',
+                collapsable: false,
+                children: [
+                    '/layout/grid',
+                    '/layout/layout'
+                ]
+            }, 
+            {
+                title: '数据展示',
+                collapsable: false,
+                children: [
+                    '/dataShow/tabs'
+                ]
+            }
         ]
     }
 }
