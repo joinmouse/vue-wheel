@@ -25,15 +25,18 @@ export default {
     computed: {
         classes () {
             return {
-                active: this.active,
-                disabled: this.disabled
+                active: this.active
             }
         }
     },
     created () {
         if (this.eventBus) {
             this.eventBus.$on('update:selected', (name) => {
-                this.active = name === this.name;
+                if(name === this.name) {
+                    this.active = true
+                }else {
+                    this.active = false
+                }
             })
         }
     },
@@ -48,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    $blue: blue;
+    $item: #64C8C8;
     $disabled-text-color: grey;
     .wh-tab-item {
         flex-shrink: 0;
@@ -58,7 +61,7 @@ export default {
         display: flex;
         align-items: center;
         &.active {
-            color: $blue;
+            color: $item;
             font-weight: bold;
         }
         &.disabled {

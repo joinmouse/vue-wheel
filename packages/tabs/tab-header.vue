@@ -1,5 +1,5 @@
 <template>
-    <div class="wh-tab-header">
+    <div class="wh-tab-header" ref="header">
         <slot></slot>
         <div class="line" ref="line"></div>
     </div>
@@ -12,7 +12,6 @@ export default {
 
     mounted () {
         this.eventBus.$on('update:selected', (item, vm) => {
-            console.log(vm.$el.getBoundingClientRect())
             this.updateLinePosition(vm)
         })
     },
@@ -20,9 +19,9 @@ export default {
     methods: {
         updateLinePosition (selectedVm) {
             let {width, left} = selectedVm.$el.getBoundingClientRect()
-            // let {left: left2} = this.$refs.head.getBoundingClientRect()
+            let leftinit = this.$refs.header.getBoundingClientRect().left
             this.$refs.line.style.width = `${width}px`
-            // this.$refs.line.style.left = `${left - left2}px`
+            this.$refs.line.style.left = `${left - leftinit}px`
         }
     }
 }
@@ -30,7 +29,7 @@ export default {
 
 <style scoped lang="scss">
     $tab-height: 40px;
-    $blue: blue;
+    $item: #64C8C8;
     $border-color: #ddd;
     .wh-tab-header {
         display: flex;
@@ -41,7 +40,7 @@ export default {
         > .line {
             position: absolute;
             bottom: 0;
-            border-bottom: 1px solid $blue;
+            border-bottom: 1px solid $item;
             transition: all 350ms;
         }
     }

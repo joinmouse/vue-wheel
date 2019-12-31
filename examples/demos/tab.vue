@@ -1,8 +1,8 @@
 <template>
     <div>
-        <WhTabs>
+        <WhTabs :selected="selected">
             <WhTabHeader>
-                <WhTabItem name="1">科技</WhTabItem>
+                <WhTabItem name="1" selected>科技</WhTabItem>
                 <WhTabItem name="2">财经</WhTabItem>
                 <WhTabItem name="3">体育</WhTabItem>
             </WhTabHeader>
@@ -17,6 +17,11 @@
 
 <script>
 export default {
-    name: 'tab'
+    name: 'tab',
+    data() {
+        return {
+            selected: '1'
+        }
+    }
 }
 </script>

@@ -7,7 +7,7 @@
 		"build": "vue-cli-service build",
 		"test:unit": "vue-cli-service test:unit",
 		"lint": "vue-cli-service lint",
-		"lib": "vue-cli-service build --target lib --name vue-wheel --dest lib packages/index.js",
+		"lib": "vue-cli-service build --target lib --name vue-wheel --dest lib src/index.js",
 		"docs:dev": "vuepress dev docs",
 		"docs:build": "vuepress build docs"
 	},

@@ -1,7 +1,7 @@
-import WhButton from './button/index'
-import { WhRow, WhCol } from './Grid/index'
-import { WhLayout, WhContent, WhHeader, WhFooter, WhSider } from './layout/index'
-import { WhTabs, WhTabHeader, WhTabBody, WhTabItem, WhTabPane} from './tabs/index'
+import WhButton from '../packages/button/index'
+import { WhRow, WhCol } from '../packages/Grid/index'
+import { WhLayout, WhContent, WhHeader, WhFooter, WhSider } from '../packages/layout/index'
+import { WhTabs, WhTabHeader, WhTabBody, WhTabItem, WhTabPane} from '../packages/tabs/index'
 
 // 以数组的结构保存组件，便于遍历
 const components = [

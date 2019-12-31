@@ -2,7 +2,7 @@ import Vue from 'vue'
 import router from './router.js' 
 import App from './App.vue'
 // 引入UI包
-import WheelVueUI from '../packages/index'
+import WheelVueUI from '../src/index'
 
 Vue.use(WheelVueUI)
 
