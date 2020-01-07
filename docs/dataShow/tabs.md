@@ -17,15 +17,15 @@ title: Tabs 标签页
 
 ### 代码演示
 
-1、经典tab栏切换
+Tab栏切换
 
 <tabs-demo></tabs-demo>
 
-```js
+```html
 <template>
     <WhTabs :selected="selected">
         <WhTabHeader>
-            <WhTabItem name="tab1" selected>科技</WhTabItem>
+            <WhTabItem name="tab1">科技</WhTabItem>
             <WhTabItem name="tab2">财经</WhTabItem>
             <WhTabItem name="tab3">体育</WhTabItem>
         </WhTabHeader>

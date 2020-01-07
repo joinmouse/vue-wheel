@@ -1,7 +1,7 @@
 <template>
     <WhTabs class="wrapper" :selected="selected">
         <WhTabHeader>
-            <WhTabItem name="tab1" selected>科技</WhTabItem>
+            <WhTabItem name="tab1">科技</WhTabItem>
             <WhTabItem name="tab2">财经</WhTabItem>
             <WhTabItem name="tab3">体育</WhTabItem>
         </WhTabHeader>
