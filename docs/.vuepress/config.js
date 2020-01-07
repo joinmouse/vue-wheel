@@ -26,7 +26,8 @@ module.exports = {
                 title: '数据展示',
                 collapsable: false,
                 children: [
-                    '/dataShow/tabs'
+                    '/dataShow/tabs',
+                    '/dataShow/collapse'
                 ]
             }
         ]

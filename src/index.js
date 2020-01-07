@@ -1,7 +1,8 @@
 import WhButton from '../packages/button/index'
 import { WhRow, WhCol } from '../packages/Grid/index'
 import { WhLayout, WhContent, WhHeader, WhFooter, WhSider } from '../packages/layout/index'
-import { WhTabs, WhTabHeader, WhTabBody, WhTabItem, WhTabPane} from '../packages/tabs/index'
+import { WhTabs, WhTabHeader, WhTabBody, WhTabItem, WhTabPane } from '../packages/tabs/index'
+import { WhCollapse, WhCollapseItem }  from '../packages/collapse/index'
 
 // 以数组的结构保存组件，便于遍历
 const components = [
@@ -17,7 +18,9 @@ const components = [
     WhTabHeader, 
     WhTabBody,
     WhTabItem, 
-    WhTabPane
+    WhTabPane,
+    WhCollapse,
+    WhCollapseItem
 ]
 
 // 定义 install 方法
@@ -47,7 +50,9 @@ const WheelVueUI =  {
     WhTabHeader, 
     WhTabBody,
     WhTabItem, 
-    WhTabPane
+    WhTabPane,
+    WhCollapse,
+    WhCollapseItem
 }
 
 export default WheelVueUI

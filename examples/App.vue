@@ -4,6 +4,7 @@
             <router-link to="/button">WhButton组件</router-link>
             <router-link to="/grid">WhGrid组件</router-link>
             <router-link to="/tab">WhTab组件</router-link>
+            <router-link to="/collapse">WhCollapse手风琴组件</router-link>
         </div>
         <router-view></router-view>
     </div>
@@ -37,13 +38,13 @@ export default {
         position: absolute;
         top: 0;
         left: 0;
-        width: 200px;
+        width: 240px;
         height: 100%;
         z-index: -1000;
         border-right: 1px solid #ddd;
     }
     .nav {
-        width: 240px;
+        width: 280px;
         a {
             padding: 10px;
             display: block;
