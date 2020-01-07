@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import ButtonPage from './demos/button'
 import GridPage from './demos/grid'
 import TabPage from './demos/tab'
+import CollapsePage from './demos/collapse'
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,10 @@ const routes = [
         path: '/tab',
         name: 'tab',
         component: TabPage
+    }, {
+        path: '/collapse',
+        name: 'collapse',
+        component: CollapsePage
     }
 ]
 
