@@ -5,6 +5,7 @@
             <router-link to="/grid">WhGrid组件</router-link>
             <router-link to="/tab">WhTab组件</router-link>
             <router-link to="/collapse">WhCollapse手风琴组件</router-link>
+            <router-link to="/slides">WhSlides轮播组件</router-link>
         </div>
         <router-view></router-view>
     </div>

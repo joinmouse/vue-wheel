@@ -3,6 +3,7 @@ import { WhRow, WhCol } from '../packages/Grid/index'
 import { WhLayout, WhContent, WhHeader, WhFooter, WhSider } from '../packages/layout/index'
 import { WhTabs, WhTabHeader, WhTabBody, WhTabItem, WhTabPane } from '../packages/tabs/index'
 import { WhCollapse, WhCollapseItem }  from '../packages/collapse/index'
+import { WhSlides, WhSlidesItem } from '../packages/slides/index'
 
 // 以数组的结构保存组件，便于遍历
 const components = [
@@ -20,7 +21,9 @@ const components = [
     WhTabItem, 
     WhTabPane,
     WhCollapse,
-    WhCollapseItem
+    WhCollapseItem,
+    WhSlides,
+    WhSlidesItem
 ]
 
 // 定义 install 方法
@@ -52,7 +55,9 @@ const WheelVueUI =  {
     WhTabItem, 
     WhTabPane,
     WhCollapse,
-    WhCollapseItem
+    WhCollapseItem,
+    WhSlides,
+    WhSlidesItem
 }
 
 export default WheelVueUI
